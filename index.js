@@ -60,32 +60,32 @@ app.post("/api/persons", (request, response) => {
 	persons.concat(person);
 	response.json(person);
 });
-// app.get("/api/persons", (request, response) => {
-// 	response.json(persons);
-// });
+app.get("/api/persons", (request, response) => {
+	response.json(persons);
+});
 
-// app.get("/info", (request, response) => {
-// 	response.send(`<h4>Phonebook has info of ${persons.length} people</h4>
-//     <h4>${new Date()}</h4>
-//     `);
-// });
+app.get("/info", (request, response) => {
+	response.send(`<h4>Phonebook has info of ${persons.length} people</h4>
+    <h4>${new Date()}</h4>
+    `);
+});
 
-// app.delete("/api/persons/:id", (request, response) => {
-// 	const id = Number(request.params.id);
-// 	persons = persons.filter((p) => p.id !== id);
-// 	response.status(204).end();
-// });
+app.delete("/api/persons/:id", (request, response) => {
+	const id = Number(request.params.id);
+	persons = persons.filter((p) => p.id !== id);
+	response.status(204).end();
+});
 
-// app.get("/api/persons/:id", (request, response) => {
-// 	const id = Number(request.params.id);
-// 	const person = persons.find((p) => p.id === id);
+app.get("/api/persons/:id", (request, response) => {
+	const id = Number(request.params.id);
+	const person = persons.find((p) => p.id === id);
 
-// 	if (person) {
-// 		response.json(person);
-// 	} else {
-// 		response.status(404).end();
-// 	}
-// });
+	if (person) {
+		response.json(person);
+	} else {
+		response.status(404).end();
+	}
+});
 const PORT = 3001;
 app.listen(PORT);
 console.log(`Server running on port ${PORT}`);
