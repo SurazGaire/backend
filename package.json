@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index.js",
     "start": "node index.js",
-    "deploy" : "git add . && git commit -m \"first commit\" && git push heroku master && heroku logs --tail"
+    "deploy": "git add . && git commit -m \"first commit\" && git push heroku master && heroku logs --tail"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.3",
     "heroku": "^7.60.1",
+    "mongoose": "^6.3.0",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
