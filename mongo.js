@@ -20,7 +20,7 @@ if (process.argv.length < 3) {
 	if (process.argv.length === 3) {
 		Person.find({}).then((people) => {
 			people.forEach((person) => {
-				console.log(person);
+				console.log(person.name, person.number);
 			});
 			mongoose.connection.close();
 		});
