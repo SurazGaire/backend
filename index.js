@@ -1,4 +1,4 @@
-// require("dotenv").config();
+require("dotenv").config();
 const express = require("express");
 const Person = require("./models/person");
 const morgan = require("morgan");
@@ -58,9 +58,8 @@ app.get("/api/persons", (request, response) => {
 //     `);
 // });
 
-app.delete("/api/person/:id", (request, response, next) => {
-	console.log(request.params.id);
-	Person.findByIdAndRemove(request.params.id)
+app.delete("/api/notes/:id", (request, response, next) => {
+	Note.findByIdAndRemove(request.params.id)
 		.then((result) => {
 			response.status(204).end();
 		})
